@@ -9,16 +9,15 @@
 int main(void)
 
 {
-char alp[52] = "abcdefghijklmnopqrstuvwxyz";
-
-int i;
-
-for (i = 0; i < 52; i++)
+char ch;
+for (ch = 'a'; ch = 'z'; ch++)
 {
-putchar(alp[i]);
+if (ch != 'q' && ch != 'e')
+{
+putchar(ch);
 }
-
-putchar('\n');
+}
+putchar(10);
 
 return (0);
 
