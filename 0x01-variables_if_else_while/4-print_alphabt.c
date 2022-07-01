@@ -8,15 +8,14 @@
 
 int main(void)
 
-char low, e, q;
-
-e = 'e';
-q = 'q';
-
-for (low = 'a'; low <= 'z'; low++)
 {
-if (low != e && low != q)
-putchar(low);
+char alp[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+int i;
+  
+for (i = 0; i < 52; i++)
+{
+putchar(alp[i]);
 }
 
 putchar('\n');
