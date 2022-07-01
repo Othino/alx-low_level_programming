@@ -9,15 +9,17 @@
 int main(void)
 
 {
-char ch;
-for (ch = 'a'; ch = 'z'; ch++)
+
+int i;
+
+for (i = 97; i < 123; i++)
 {
-if (ch != 'q' && ch != 'e')
+if (i != 101 && i != 113)
 {
-putchar(ch);
+putchar(i);
 }
 }
-putchar(10);
+putchar('\n');
 
 return (0);
 
