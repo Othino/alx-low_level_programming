@@ -7,7 +7,7 @@
  * Description: Print statements based on the last digit of the random number.
  * Return: Always 0 (Success)
  */
-int main(void)  
+int main(void)
 {
 int n;
 int m;
