@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
-* main - assign a random number to the variable n each time it is executed, print whether the number stored in the variable n is positive or negative
+* main - Print whether the number stored in the variable n is positive or negative.
 * Return: Always 0 (Success)
 */
 int main(void)
