@@ -10,15 +10,12 @@ int main(void)
 
 {
 
-char _putchar[] = "_putchar";
-int i = 0;
+char word[9] = "_putchar";
+int i;
 
-while (_putchar[i] != '\0')
-{
+for (i = 0; i < 9; i++)
 
-_putchar(_putchar[i]);
-i+1;
-}
+_putchar(word[i]);
 
 _putchar('\n');
 
