@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * main - Print "_putchar" followed by a new line.
@@ -7,9 +7,10 @@
  */
 
 int main(void)
+
 {
 
-char _putchar[] = "_putchar"
+char _putchar[] = "_putchar";
 int i = 0;
 
 while (_putchar[i] != '\0')
@@ -21,6 +22,6 @@ i+1;
 
 _putchar('\n');
 
- return(0);
+return(0);
 
-} 
+}
