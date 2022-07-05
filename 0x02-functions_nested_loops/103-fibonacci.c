@@ -9,20 +9,24 @@
 int main(void)
 
 {
-int i;
-long in fibonacci[50], sum = 2;
+long int n1, n2, fn, afn;
 
-fibonacci[0] = 1;
-fibonacci[1] = 2;
+n1 = 1;
+n2 = 2;
+fn = afn = 0;
 
-for (i = 2; i < 50; i++)
+while (fn <= 4000000)
 {
-fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+fn = n1 + n2;
+n1 = n2;
+n2 = fn;
 
-if ((fibonacci[i] % 2) == 0 && fibonacci[i] < 4000000)
-sum += fibonacci[i];
+if ((n1 % 2) == 0)
+{
+afn += n1;
 }
-printf("%ld\n", sum);
+}
+printf("%ld\n", afn);
 
-return(0);
+return (0);
 }
