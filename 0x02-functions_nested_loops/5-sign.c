@@ -2,8 +2,8 @@
 
 /**
  * print_sign - Prints the sign of a number
- *
- * @c: Input character
+ * @n: Input character
+ * Description: This function prints sign of a number
  * Return: 1 if positive, 0 if zero, -1 if negative
  */
 
