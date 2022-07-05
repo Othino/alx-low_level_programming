@@ -15,7 +15,7 @@ for (i = 0; i < 1024; i++)
 if ((i % 5) == 0 || (i %3) == 0)
 sum += i;
 }
-printif("%d\n", sum);
+printf("%d\n", sum);
 
 return(0);
 }
