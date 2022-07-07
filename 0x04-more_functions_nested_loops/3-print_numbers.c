@@ -5,12 +5,14 @@
  * 
  * Return: Nothing
  */
+
 void print_numbers(void)
 {
-int i;
+	int ch;
 
-i = '0';
-for (i <= '9'; i++)
-_putchar(i);
-_putchar('\n');
+	for (ch = 48; ch < 58; ch++)
+	{
+		_putchar(ch);
+	}
+	_putchar('\n');
 }
