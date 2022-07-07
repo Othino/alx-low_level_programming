@@ -6,26 +6,19 @@
  * Return: no return.
  */
 void print_diagonal(int n)
-{
-int c,
-int i;
 
-c = 0;
-
-while (n > 0)
 {
-i = c;
-
-while (i > 0)
+int i = 0, j;
+if (n > 0)
 {
+for (; i < n; i++)
+{
+for (j = 0; j < i; j++)
 _putchar(' ');
-i--;
-}
-_putchar('\\');
+_putchar(92);
 _putchar('\n');
-c++;
-n--;
 }
-if (c < 1)
+}
+else
 _putchar('\n');
 }
