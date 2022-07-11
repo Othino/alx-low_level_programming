@@ -15,8 +15,7 @@
 int _atoi(char *s)
 {
 int i;
-int h,
-int p;
+int h, p;
 
 h = 0;
 p = -1;
