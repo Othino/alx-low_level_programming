@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _strncpy - a function that copys the strings.
@@ -9,19 +10,7 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-int srclen = 0,
-i = 0;
+strncopy(dest, src, n);
 
-while (src[i] != '\0' && i < n)
-{
-dest[i] = src[i];
-i++;
-}
-
-while (i < n)
-{
-dest[i] = '\0';
-i++;
-}
 return (dest);
 }
