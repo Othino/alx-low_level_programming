@@ -7,36 +7,16 @@ int check_seperators(char c);
  */
 char *cap_string(char *s)
 {
-int i = 0;
+int i;
 
-while (s[i])
+for (i = 0; c[i] != '\0'; i++)
 {
-if (i == 0 && (s[i] >= 'a' && s[i] <= 'z'))
-s[i] -= 32;
 
-if (check_seperators(s[i]) && (s[i + 1] >= 'a' && s[i + 1] <= 'z'))
-s[i + 1] -= 32;
-i++;
+if (c[i] > 96 && c[i] < 123)
+{
+c[i] -= 32;
+}
 }
 
-return (s);
-}
-
-/**
- * check_seperators - Separators of words: space, tabulation, new line,
- * ,, ;, ., !, ?, ", (, ), {, and }
- * @c: an input character
- * Return: 1 if seperator, 0 otherwise
- */
-int check_seperators(char c)
-{
-int i = 0;
-char seperators[13] = { ' ', '\t', '\n', ',', ';', '.', '!', '?',
-'"', '(', ')', '{', '}' };
-for (; i < 13; i++)
-{
-if (c == seperators[i])
-return (1);
-}
-return (0);
+return (c)
 }
