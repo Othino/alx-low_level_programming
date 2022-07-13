@@ -1,11 +1,11 @@
-int check_seperators(char c);
+#include "main.h"
 
 /**
- * cap_string - a function that capitalizes all words of a string.
- * @s: An input string to capitalize letters
- * Return: pointer to s
+ * cap_string - Changes all lowercase letters to uppercase.
+ * @c: String
+ * Return: pointer to c
  */
-char *cap_string(char *s)
+char *string_toupper(char *c)
 {
 int i;
 
