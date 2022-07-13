@@ -2,21 +2,20 @@
 
 /**
  * cap_string - Changes all lowercase letters to uppercase.
- * @c: String
- * Return: pointer to c
+ * @s: String
+ * Return: pointer to s
  */
-char *string_toupper(char *c)
+char *string_toupper(char *s)
 {
-int i;
+int count = 0;
 
-for (i = 0; c[i] != '\0'; i++)
+while (*(s + count) != '\0')
 {
 
-if (c[i] > 96 && c[i] < 123)
+if ((*(s + count) >= 97) && (*(s + count) <= 122))
+*(s + count) = *(s + count) - 32;
+count++;
 {
-c[i] -= 32;
-}
-}
 
-return (c)
+return (s)
 }
