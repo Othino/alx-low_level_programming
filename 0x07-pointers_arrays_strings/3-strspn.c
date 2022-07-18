@@ -8,34 +8,28 @@
  */
 unsigned int _strspn(cahr *s, char *accept)
 {
-int i;
-int j;
-int c;
+unsigned int bytes = 0;
+int index;
 
-i = 0;
-c = 0;
-
-while (s[i] != '\0')
-{
-j = 0;
-
-while (accept[j] != '\0')
+while (*s)
 {
 
-if (s[i] == accept[j])
+for (index = 0; accept[index]; index++)
 {
-c++;
+
+if (*s == accept[index])
+{
+bytes++;
 
 break;
 }
-j++;
+
+else if (accept[index + 1] == '\0')
+return (bytes);
+
+}
+s++;
 }
 
-if (accept[j] == '\0')
-
-break;
-i++;
-}
-
-return (c);
+return (bytes);
 }
