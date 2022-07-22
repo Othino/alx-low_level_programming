@@ -1,7 +1,3 @@
-#
-#include MAIN_H
-
-File Edit Options Buffers Tools C Help
 #ifndef MAIN_H
 #define MAIN_H
 
