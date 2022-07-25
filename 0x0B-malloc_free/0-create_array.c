@@ -24,7 +24,7 @@ return (NULL);
 while (i < size)
 {
 s[i] = c,
-i++
+i++;
 }
 
 return (s);
