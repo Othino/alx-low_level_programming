@@ -9,18 +9,19 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-unsigned int i = 0;
-char *space;
+unsigned int i;
+char *p;
 
 if (nmemb == 0 || size == 0)
 return (NULL);
-space = malloc(nmemb * size);
+p = malloc(nmemb * size);
 
-if (space == NULL)
+if (p == NULL)
 return (NULL);
 
-for (; i < nmemb * size; i++)
-*(space + i) = 0;
-
-return (space);
+for (i = 0; i < (nmemb * size); i++)
+{
+*(p + i) = 0;
+}
+return (p);
 }
