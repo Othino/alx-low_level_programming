@@ -2,40 +2,49 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - A function that concatenates two strings
- * @s1: An input pointer of the first string
- * @s2: An input pointer of the second string
- * @n: An input integer of number of string to concatenate
- * Return: A pointer to concatened strings or NULL if it str is NULL
+ * string_nconcat - concatenate 2 strings, only n bytes of s2
+ * @s1: string 1
+ * @s2: string 2
+ * @n: bytes to include of s2
+ * Return: NULL if fail, else pointer to malloc memory
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-char *new_str;
-unsigned int i = 0, lens1 = 0, lens2 = 0;
+char *p;
+int strlen1, i, c;
 
 if (s1 == NULL)
 s1 = "";
-
-while (s1[lens1])
-lens1++;
-
 if (s2 == NULL)
 s2 = "";
-
-while (s2[lens2])
-lens2++;
-if (n >= lens2)
-n = lens2;
-new_str = malloc(lens1 + n + 1);
-if (new_str == NULL)
+strlen1 = (unsigned int)_strlen(s1);
+p = malloc((strlen1 + n + 1) * sizeof(char));
+if (p == NULL)
 return (NULL);
-for (; i < (lens1 + n); i++)
+for (i = 0, c = 0; i < (strlen1 + n); i++)
 {
-if (i < lens1)
-new_str[i] = *s1, s1++;
+if (i < strlen1)
+p[i] = s1[i];
 else
-new_str[i] = *s2, s2++;
+p[i] = s2[c++];
 }
-new_str[i] = '\0';
-return (new_str);
+p[i] = '\0';
+return (p);
+}
+
+/**
+ * _strlen - find length of string
+ * @s: string
+ * Return: length of string
+ */
+
+int _strlen(char *s)
+{
+int i;
+
+for (i = 0; s[i] != '\0'; i++)
+;
+
+return (i);
 }
