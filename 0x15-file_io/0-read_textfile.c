@@ -1,36 +1,33 @@
-#include "main.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/uio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
- * read_textfile - reads a text file and prints the letters
- * @filename: filename.
- * @letters: numbers of letters printed.
- *
- * Return: numbers of letters printed, returns 0 on failure.
+ * create_file - A function that creates a file
+ * @filename: The filename to create
+ * @text_content: A NULL terminated string to write to the file
+ * Return: 1 on success, -1 if file can not be created, nor written,
+ * nor write fails.
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	ssize_t nrd, nwr;
-	char *buf;
+	int fdo, fdw, len = 0;
 
-	if (!filename)
-		return (0);
+	if (filename == NULL)
+		return (-1);
 
-	fd = open(filename, O_RDONLY);
+	fdo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	if (fdo < 0)
+		return (-1);
 
-	if (fd == -1)
-		return (0);
+	while (text_content && *(text_content + len))
+		len++;
 
-	buf = malloc(sizeof(char) * (letters));
-	if (!buf)
-		return (0);
-
-	nrd = read(fd, buf, letters);
-	nwr = write(STDOUT_FILENO, buf, nrd);
-
-	close(fd);
-
-	free(buf);
-
-	return (nwr);
+	fdw = write(fdo, text_content, len);
+	close(fdo);
+	if (fdw < 0)
+		return (-1);
+	return (1);
 }
