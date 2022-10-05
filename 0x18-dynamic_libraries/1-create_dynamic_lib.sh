@@ -1,3 +1,2 @@
 #!/bin/bash
-gcc -fPIC *.c
-gcc -shared -o libdaynamic.so *.o
+gcc -fPIC *.c -shared -o liball.so
