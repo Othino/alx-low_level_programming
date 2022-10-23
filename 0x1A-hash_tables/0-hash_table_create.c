@@ -6,6 +6,7 @@
  * @size: The size of hash table.
  * Return: A pointer to the new hash table in memory (heap).
  */
+
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	unsigned long int i = 0;
