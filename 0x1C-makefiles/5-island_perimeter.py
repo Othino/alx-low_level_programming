@@ -1,32 +1,26 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-module that returns the perimeter of the island description
-
-"""
+""" Module that contains the island_perimeter function """
 
 
 def island_perimeter(grid):
-    """
-    Calculater the Island's perimeter
-    Parameter:
-        grid (array): An 0's and 1's array that represents an island (1)
-        sourrounded by water (0)
-    Returns:
-        The island's perimeter
-    """
-    rows = len(grid)
-    cols = len(grid[0])
+    """ Function that returns the perimeter of island described in grid """
     perimeter = 0
-    for i in range(1, rows - 1):
-        for j in range(1, cols - 1):
-            if grid[i][j] == 1:
-                if grid[i - 1][j] == 0:
+
+    nrows = len(grid)
+
+    if grid != []:
+        ncolumns = len(grid[0])
+
+    for a in range(nrows):
+        for b in range(ncolumns):
+            if grid[a][b] == 1:
+                if (a - 1) == -1 or grid[a - 1][b] == 0:
                     perimeter += 1
-                if grid[i + 1][j] == 0:
+                if (a + 1) == nrows or grid[a + 1][b] == 0:
                     perimeter += 1
-                if grid[i][j - 1] == 0:
+                if (b - 1) == -1 or grid[a][b - 1] == 0:
                     perimeter += 1
-                if grid[i][j + 1] == 0:
+                if (b + 1) == ncolumns or grid[a][b + 1] == 0:
                     perimeter += 1
+
     return
